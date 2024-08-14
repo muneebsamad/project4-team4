@@ -179,7 +179,7 @@ To run the script, you need the following Python packages:
 
 ## Modelling
 
-This script provides an in-depth analysis of video game sales data, utilizing various datasets stored in a SQLite database. The analysis involves data loading, preprocessing, feature engineering, and the application of several machine learning models to predict global video game sales. Despite the effort, the predictive models did not perform as expected, with evaluation metrics such as R² and Mean Squared Error (MSE) indicating room for improvement.
+The `modelling.ipynb` notebook provides an in-depth analysis of video game sales data, utilizing various datasets stored in a SQLite database. The analysis involves data loading, preprocessing, feature engineering, and the application of several machine learning models to predict global video game sales. Despite the effort, the predictive models did not perform as expected, with evaluation metrics such as R² and Mean Squared Error (MSE) indicating room for improvement.
 
 ### Features
 
