@@ -179,4 +179,71 @@ To run the script, you need the following Python packages:
 
 ## Modelling
 
+This script provides an in-depth analysis of video game sales data, utilizing various datasets stored in a SQLite database. The analysis involves data loading, preprocessing, feature engineering, and the application of several machine learning models to predict global video game sales. Despite the effort, the predictive models did not perform as expected, with evaluation metrics such as R² and Mean Squared Error (MSE) indicating room for improvement.
 
+### Features
+
+#### 1. Data Loading
+- **Source**: Data is loaded from an SQLite database (`games_data.sqlite`), which includes three primary datasets:
+  - **Video Game Sales Data** (`data` table): Contains information about video game sales across different regions.
+  - **GDP Data** (`gdp` table): GDP information over various years.
+  - **Population Data** (`population` table): Population statistics across different years.
+  
+#### 2. Data Inspection
+- **Initial Inspection**: The script begins by displaying the first few rows of each dataset, allowing for an overview of the data structure, types, and potential anomalies.
+- **Descriptive Statistics**: Summary statistics are calculated to understand the central tendency and distribution of the data.
+
+### 3. Data Cleaning
+- **Missing Values**: Missing data is identified and handled, either by filling in values or removing rows/columns as appropriate.
+- **Data Types**: Data types are checked and converted where necessary to ensure compatibility with subsequent analysis steps.
+
+#### 4. Feature Engineering
+- **New Features**: The script creates new features by combining or transforming existing columns to enhance the predictive power of the models. Examples include aggregating sales data or normalizing values based on GDP or population.
+
+#### 5. Model Training and Evaluation
+- **Linear Regression**: A simple linear regression model was trained to predict global sales based on various features, including regional sales, year, and GDP.
+  - **R² Score**: The model yielded a low R² score, indicating that the model explains very little of the variance in the global sales data.
+  - **MSE**: The Mean Squared Error was relatively high, pointing to significant errors in the model’s predictions.
+
+- **Decision Tree Regression**: An attempt to use a decision tree model provided a more flexible approach, but it still underperformed.
+  - **R² Score**: Although slightly better than linear regression, the R² score remained unsatisfactory, implying poor predictive accuracy.
+  - **MSE**: The decision tree also resulted in a high MSE, reflecting large prediction errors.
+
+- **Neural Network Model**: A deep learning model was implemented using TensorFlow to capture non-linear relationships and improve prediction accuracy.
+  - **R² Score**: The TensorFlow model also failed to achieve a satisfactory R² score, suggesting that even complex models struggle to capture the underlying patterns.
+  - **MSE**: The high MSE confirmed that the model's predictions were still off by a significant margin.
+
+#### Analysis of Findings
+
+The analysis attempted to build predictive models to estimate global video game sales using a variety of features. However, the results were not successful, as indicated by the evaluation metrics:
+
+- **R² Scores**: Across all models (Linear Regression, Decision Tree Regression, and TensorFlow), the R² scores were low, indicating that the models were not able to adequately explain the variance in the global sales data. This suggests that the chosen features may not be sufficient to predict sales, or that the relationships between these features and global sales are more complex than the models can capture.
+
+- **MSE Values**: The high MSE values across all models further confirmed the poor predictive performance. Large errors in the predictions indicate that the models were not accurate in estimating the global sales figures.
+
+#### Possible Reasons for Poor Model Performance
+
+- **Feature Limitations**: The features used (e.g., regional sales, GDP, year) might not capture the key drivers of global sales, such as marketing strategies, game quality, or consumer behavior.
+- **Data Quality**: Issues with data quality, such as missing values or inconsistencies, could have adversely affected the models' ability to learn.
+- **Model Complexity**: Even the deep learning model struggled, suggesting that the relationships within the data might require different modeling approaches, additional data collection or more sophisticated feature engineering.
+
+#### Prerequisites
+
+  - `pandas`: For data manipulation and analysis.
+  - `numpy`: For numerical operations.
+  - `sqlite3`: For database interactions.
+  - `sklearn`: For machine learning models.
+  - `tensorflow`: For deep learning models.
+  - `matplotlib`: For visualizations.
+
+#### Usage
+
+1. **Prepare the Environment**: Ensure that the required libraries are installed, and the SQLite database is correctly placed in the specified path.
+
+2. **Run the Script**: Execute the script cell by cell if using a Jupyter notebook, or run it as a standalone Python script.
+
+3. **Analyze the Results**: Review the output, particularly the R² and MSE values, to understand the limitations of the models.
+
+#### Conclusion
+
+This script provides a comprehensive analysis of video game sales data, but the predictive models developed were not successful. The findings suggest that further work is needed to improve model performance, potentially through the inclusion of additional features, better data cleaning, or the use of alternative modeling techniques.
