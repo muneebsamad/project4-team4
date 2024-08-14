@@ -5,6 +5,8 @@ For our project, we have decided to take an incisive look at the video game indu
 
 ## Datasets Descriptions
 
+The datasets used for analysis are locared in `data` folder. All the datasets are in .csv format.
+
 ### GDP Dataset
 
 #### Overview
@@ -68,7 +70,9 @@ The Video Game Sales dataset offers a comprehensive look at sales data for vario
 #### Usage
 This dataset oofers potential for analyzing trends in video game sales across different regions, genres, and platforms over time. 
 
-## Visualization and Data Analysis
+## Visualization and Data Analysis 
+
+The script for visualization and data analysis is located in `visualization.ipynb` notebook.
 
 #### Installation
 
@@ -102,7 +106,6 @@ Various interactive visualizations are created to explore and analyze the distri
 
 - **Regional Sales Distribution**: A heatmap illustrating the distribution of sales across North America, Europe, Japan, and other regions.
 
-
 #### Statistical Analysis
 
 - **Descriptive Statistics**: Summary statistics such as mean, median, and mode are calculated for various sales columns. For instance, the mean global sales across all games, the median sales for specific platforms, and the standard deviation of sales across different genres are considered.
@@ -127,14 +130,53 @@ The key statistical indicators are supported by visualizations and/or tables.
 
 - **Variance and Standard Deviation**: The variance (2.45) and standard deviation (1.57) further illustrate the spread of sales data, with most games clustering around a central value but with notable outliers that skew the distribution.
 
-## Data preprocessing 
+## Data Preprocessing 
 
+Python script `data_prep.ipynb` is used to preapre video game sales data (`vgsales.csv`), GDP data (`GDP.csv`), and population data (`Population.csv`) for future modelling. The script loads these datasets, performs data cleaning and transformations, and stores the processed data in an SQLite database for further implementation.
 
+#### Features
 
+ 1. Video Game Sales Data
+- **Data Loading**: Loads the video game sales data from `vgsales.csv`.
+- **Data Inspection**: Provides an overview of the dataset, including data types and missing values.
+- **Data Cleaning**: 
+  - Fills missing values in the `Year` column with the median.
+  - Fills missing values in the `Publisher` column with the mode.
+  - Converts the `Year` column to integer type.
+- **Data Storage**: Saves the cleaned video game sales data into an SQLite database as a table named `data`.
 
+2. GDP Data
+- **Data Loading**: Loads GDP data from `GDP.csv`.
+- **Data Cleaning**: 
+  - Drops unnecessary columns.
+  - Transposes the data to long format.
+  - Sums the GDP values across all countries for each year.
+- **Data Storage**: Saves the aggregated GDP data into the SQLite database as a table named `gdp`.
 
+3. Population Data
+- **Data Loading**: Loads population data from `Population.csv`.
+- **Data Cleaning**: 
+  - Drops unnecessary columns.
+  - Transposes the data to long format.
+  - Calculates the mean population across all countries for each year.
+- **Data Storage**: Saves the aggregated population data into the SQLite database as a table named `population`.
 
+#### Requirements
 
+To run the script, you need the following Python packages:
 
+- `pandas`
+- `sqlite3`
+
+#### How to Use
+
+1. Place the `vgsales.csv`, `GDP.csv`, and `Population.csv` files in the appropriate directory.
+2. Run the script to load, clean, and store the data.
+3. The cleaned data will be stored in an SQLite database named `games_data.sqlite` with the following tables:
+   - `data`: Cleaned video game sales data.
+   - `gdp`: Aggregated GDP data.
+   - `population`: Aggregated population data.
+
+## Modelling
 
 
