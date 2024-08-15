@@ -90,21 +90,39 @@ Various interactive visualizations are created to explore and analyze the distri
 
 - **Top-Selling Games**: A bar chart showing the top 10 best-selling video games globally.
 
+![Top-Selling Games](./Visuals/sales_trend.png)
+
 - **Top-Selling Publishers**: A bar chart showing the top 10 best-selling video games publishers globally.
+
+![Top-Selling Publishers](./Visuals/publishers_by_sales.png)
 
 - **Sales by Genre**: A comparison of global sales across different game genres.
 
+![Sales by Genre](./Visuals/genres_by_sales.png)
+
 - **Platform Popularity**: A line chart displaying sales trends for major gaming platforms over the years.
 
--  **Word Cloud Ilustration**: A graphic illustration of the most popular words used for video games.
+![Platform Popularity](./Visuals/total_sales_by_platform.png)
 
--  **Interactive pie charts**: Interactive pie charts visualize the top-selling video games based on different regional sales.
+- **Word Cloud Ilustration**: A graphic illustration of the most popular words used for video games.
 
--  **Interactive histograms**: Visualize genre counts and sales according to platform.
+![Word Cloud Ilustration](./Visuals/world_cloud.png)
 
--  **Boxplots**: The script utilizes several boxplots to analyze and visualize the distribution of video game sales across various dimensions, providing key insights into the data. These include boxplots that compare sales across different regions, genres, platforms, and release years. 
+- **Interactive pie charts**: Interactive pie charts visualize the top-selling video games based on different regional sales.
+
+![Interactive pie charts](./Visuals/region_pop_US.png)
+
+- **Interactive histograms**: Visualize genre counts and sales according to platform.
+
+![Interactive histograms](./Visuals/genre_count_platforms.png)
+
+- **Boxplots**: The script utilizes several boxplots to analyze and visualize the distribution of video game sales across various dimensions, providing key insights into the data. These include boxplots that compare sales across different regions, genres, platforms, and release years.
+
+![Boxplots](./Visuals/box_plots.png)
 
 - **Regional Sales Distribution**: A heatmap illustrating the distribution of sales across North America, Europe, Japan, and other regions.
+
+![Regional Sales Distribution](./Visuals/heatmap.png)
 
 #### Statistical Analysis
 
